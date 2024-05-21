@@ -51,37 +51,39 @@ class ReactionsDialogWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BackdropFilter(
       filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            // reactions
-            ReactionsList(
-              alignment: widgetAlignment,
-              reactions: reactions,
-              onReactionTap: onReactionTap,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            // message
-            HeroMessage(
-              alignment: widgetAlignment,
-              id: id,
-              messageWidget: messageWidget,
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            // context menu
-            MenuItemsList(
-              alignment: widgetAlignment,
-              menuItemsWidth: menuItemsWidth,
-              menuItems: menuItems,
-              onContextMenuTap: onContextMenuTap,
-            ),
-          ],
+      child: Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              // reactions
+              ReactionsList(
+                alignment: widgetAlignment,
+                reactions: reactions,
+                onReactionTap: onReactionTap,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              // message
+              HeroMessage(
+                alignment: widgetAlignment,
+                id: id,
+                messageWidget: messageWidget,
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              // context menu
+              MenuItemsList(
+                alignment: widgetAlignment,
+                menuItemsWidth: menuItemsWidth,
+                menuItems: menuItems,
+                onContextMenuTap: onContextMenuTap,
+              ),
+            ],
+          ),
         ),
       ),
     );

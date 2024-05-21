@@ -68,7 +68,7 @@ class _MenuItemsListState extends State<MenuItemsList> {
                       item: menuItems[i],
                       animate: clickedContextMenuIndex == i,
                     ),
-                    if (i == menuItems.length - 1)
+                    if (i != menuItems.length - 1)
                       Divider(
                         color: Colors.grey.shade300,
                         thickness: 1,
@@ -99,7 +99,10 @@ class _MenuItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(8.0, 4.0, 8.0, 4.0),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 8,
+        vertical: 16,
+      ),
       child: InkWell(
         onTap: () {
           onContextMenuTap(item);
