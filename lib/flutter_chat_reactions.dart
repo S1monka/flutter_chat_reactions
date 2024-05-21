@@ -1,6 +1,7 @@
 library flutter_chat_reactions;
 
 import 'dart:ui';
+
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_reactions/model/menu_item.dart';
@@ -56,7 +57,7 @@ class _ReactionsDialogWidgetState extends State<ReactionsDialogWidget> {
   @override
   Widget build(BuildContext context) {
     return BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+      filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
       child: Center(
         child: Padding(
           padding: const EdgeInsets.only(right: 20.0, left: 20.0),
@@ -91,16 +92,8 @@ class _ReactionsDialogWidgetState extends State<ReactionsDialogWidget> {
         child: Container(
           width: MediaQuery.of(context).size.width * widget.menuItemsWidth,
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.shade500,
-                spreadRadius: 1,
-                blurRadius: 2,
-                offset: const Offset(0, 1), // changes position of shadow
-              ),
-            ],
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -164,6 +157,7 @@ class _ReactionsDialogWidgetState extends State<ReactionsDialogWidget> {
                       Divider(
                         color: Colors.grey.shade300,
                         thickness: 1,
+                        height: 0,
                       ),
                   ],
                 ),
@@ -192,16 +186,8 @@ class _ReactionsDialogWidgetState extends State<ReactionsDialogWidget> {
         child: Container(
           padding: const EdgeInsets.all(5),
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.background,
+            color: Theme.of(context).colorScheme.surface,
             borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.grey.shade500,
-                spreadRadius: 1,
-                blurRadius: 2,
-                offset: const Offset(0, 1), // changes position of shadow
-              ),
-            ],
           ),
           child: Row(
             mainAxisSize: MainAxisSize.min,
